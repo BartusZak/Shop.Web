@@ -1,0 +1,23 @@
+﻿@model Shop.Web.Models.Wszystkie
+
+
+        <td>
+            @Html.DisplayFor(model => model.Nazwa) [@Html.DisplayFor(model => model.Rodzaj)]
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Data_wydania)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Cena)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Autor)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Wydawnictwo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+            @Html.ActionLink("Details", "Details", new { id= Model.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id= Model.ID })
+        </td>

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Shop.Web.Models.Wszystkie>
+
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>Katalog książek</h3>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/ActiveMenuTab.js"></script>
+    <table class="headtable">
+        <tr>
+            <td class="current" >@Ajax.ActionLink("Wszystkie","Wszystkie", new AjaxOptions()
+           {
+               HttpMethod = "GET",
+               UpdateTargetId = "divKsiazki",
+               InsertionMode=InsertionMode.Replace
+           } )</td>
+            <td>
+                @Ajax.ActionLink("Audiobooki", "Audiobooki", new AjaxOptions()
+           {
+               HttpMethod = "GET",
+               UpdateTargetId = "divKsiazki",
+               InsertionMode = InsertionMode.Replace
+           })
+        </td>
+            <td>
+                @Ajax.ActionLink("E-booki", "Ebooki", new AjaxOptions()
+           {
+               HttpMethod = "GET",
+               UpdateTargetId = "divKsiazki",
+               InsertionMode = InsertionMode.Replace
+           })
+        </td>
+        </tr>
+    </table>
+    <div id="divKsiazki">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nazwa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Data_wydania)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cena)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Autor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Wydawnictwo)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @Html.Partial("_WszystkieItem", item)
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>
