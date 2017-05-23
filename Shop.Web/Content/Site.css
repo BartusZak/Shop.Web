@@ -22,7 +22,22 @@ textarea {
     max-width: 280px;
 }
 
+/*Kolor aktywnej zakładki Wszystkie/Audiobook/Ebook*/
 .current{
     background-color: rgba(8, 8, 8, 0.18);
 }
 
+/*Koszyk*/
+.koszyk {
+    float: right;
+    margin-top: 30px;
+}
+.koszyk span {
+    display: inline-block;
+}
+.koszyk .liczbaprod {
+    border: 1px solid #000;
+    padding: 10px 100px 10px 10px;
+    margin-left: 20px;
+
+}

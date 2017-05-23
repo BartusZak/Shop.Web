@@ -44,7 +44,6 @@ namespace Shop.Web.Controllers
         }
 
 
-
         // GET: Wszystkies/Details/5
         public ActionResult Details(int? id)
         {

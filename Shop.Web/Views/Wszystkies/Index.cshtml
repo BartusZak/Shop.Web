@@ -16,33 +16,34 @@
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
-    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-    <script src="~/Scripts/ActiveMenuTab.js"></script>
+
+
     <table class="headtable">
         <tr>
-            <td class="current" >@Ajax.ActionLink("Wszystkie","Wszystkie", new AjaxOptions()
+            <td class="current">
+                @Ajax.ActionLink("Wszystkie", "Wszystkie", new AjaxOptions()
            {
                HttpMethod = "GET",
                UpdateTargetId = "divKsiazki",
-               InsertionMode=InsertionMode.Replace
-           } )</td>
+               InsertionMode = InsertionMode.Replace
+           })
+            </td>
             <td>
                 @Ajax.ActionLink("Audiobooki", "Audiobooki", new AjaxOptions()
-           {
-               HttpMethod = "GET",
-               UpdateTargetId = "divKsiazki",
-               InsertionMode = InsertionMode.Replace
-           })
-        </td>
+       {
+           HttpMethod = "GET",
+           UpdateTargetId = "divKsiazki",
+           InsertionMode = InsertionMode.Replace
+       })
+            </td>
             <td>
                 @Ajax.ActionLink("E-booki", "Ebooki", new AjaxOptions()
-           {
-               HttpMethod = "GET",
-               UpdateTargetId = "divKsiazki",
-               InsertionMode = InsertionMode.Replace
-           })
-        </td>
+       {
+           HttpMethod = "GET",
+           UpdateTargetId = "divKsiazki",
+           InsertionMode = InsertionMode.Replace
+       })
+            </td>
         </tr>
     </table>
     <div id="divKsiazki">
@@ -65,7 +66,6 @@
                 </th>
                 <th></th>
             </tr>
-
             @foreach (var item in Model)
             {
                 <tr>

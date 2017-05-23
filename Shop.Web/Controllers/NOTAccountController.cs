@@ -13,16 +13,16 @@ using Shop.Web.Models;
 namespace Shop.Web.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class NOTAccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
-        public AccountController()
+        public NOTAccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public NOTAccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;
             SignInManager = signInManager;
